@@ -1,0 +1,160 @@
+/* Global Styles */
+html {
+	scroll-behavior: smooth;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.5;
+    background-color: #1C2321;
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column; 
+}
+
+.container {
+    width: 90%;
+    margin: 5px auto;
+}
+
+header {
+    background: #1C2321;
+    padding: 20px 0;
+    /* position: fixed; */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;	
+}
+
+header .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header .logo {
+    max-width: 200px;
+    height: auto;
+	margin-left: 10px;
+}
+
+/* Hero Section */
+.hero-section {
+    /* height: 60vh; */
+    /* background: url('https://www.placeholder.com/1600x900') no-repeat center center/cover; */
+    display: flex;
+	align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    color: white;
+    padding: 20px 20px;
+}
+
+.hero-section .hero-content {
+    max-width: 1000px;
+	margin-left: 5%;
+}
+
+.hero-section h2 {
+    font-size: 3.5vw;
+    /* font-size: 4rem; */
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.cta-container {
+    display: flex;
+    justify-content: flex-start;
+    /* text-align: right; */
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #46C2CE;
+    color: #293132;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-size: 1.1rem;
+    /* font-weight: bold; */
+}
+
+.cta-btn:hover {
+    background: #fff;
+    color: #293132;
+}
+
+
+footer {
+    background: #1C2321;
+    color: white;
+    text-align: right;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Adjust header navigation for mobile */
+    header nav ul {
+        flex-direction: column;
+        position: fixed;
+        background-color: #293132;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        display: none;
+    }
+
+    header nav ul.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header ul li {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Adjust hero section for mobile */
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    .cta-btn {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+
+    
+    /* Footer */
+    footer p {
+        font-size: 0.9rem;
+    }
+}
