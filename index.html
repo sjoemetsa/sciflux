@@ -15,14 +15,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..700&family=Schibsted+Grotesk:wght@500..800&display=swap">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 <noscript><style>.js-only { display: none !important; }</style></noscript>
+<script>
+  // Keep cookies in memory only, so Google Analytics stores nothing in the browser.
+  // The site sets no other cookies. Everything here is gone when the page closes.
+  // GA4 ignores client_storage: 'none'. Approach from Stack Overflow, answer 1:
+  // https://stackoverflow.com/questions/71424887/cookieless-google-analytics-v4-still-generates-ga-cookie
+  (function () {
+    var jar = {};
+    try {
+      Object.defineProperty(document, 'cookie', {
+        configurable: true,
+        get: function () { return Object.keys(jar).map(function (k) { return k + '=' + jar[k]; }).join('; '); },
+        set: function (v) {
+          var pair = String(v).split(';')[0], i = pair.indexOf('=');
+          if (i < 1) return;
+          var name = pair.slice(0, i).trim(), value = pair.slice(i + 1).trim();
+          if (/expires=Thu, 01 Jan 1970/i.test(v) || /max-age=0/i.test(v)) delete jar[name]; else jar[name] = value;
+        }
+      });
+    } catch (e) {}
+  })();
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2T3WNSDF4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-V2T3WNSDF4', { client_storage: 'none' }); // no cookies or browser storage
+  gtag('config', 'G-V2T3WNSDF4');
 </script>
 </head>
 <body>
