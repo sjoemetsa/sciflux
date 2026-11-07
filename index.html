@@ -14,9 +14,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500..800&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..700&family=Schibsted+Grotesk:wght@500..800&display=swap">
 <link rel="stylesheet" href="styles.css?v=2">
 <noscript><style>.js-only { display: none !important; }</style></noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2T3WNSDF4"></script>
@@ -456,6 +454,7 @@
   const t = () => STR[lang];
   function setLang(next, save) {
     lang = next === 'ja' ? 'ja' : 'en';
+    if (lang === 'ja' && !document.getElementById('font-ja')) { const l = document.createElement('link'); l.id = 'font-ja'; l.rel = 'stylesheet'; l.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap'; document.head.append(l); }
     document.documentElement.lang = lang;
     for (const x of textEls) x.el.innerHTML = lang === 'ja' && JA[x.key] != null ? JA[x.key] : x.en;
     for (const x of ariaEls) x.el.setAttribute('aria-label', lang === 'ja' && JA_ATTR[x.key] ? JA_ATTR[x.key] : x.en);
