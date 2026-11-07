@@ -15,14 +15,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..700&family=Schibsted+Grotesk:wght@500..800&display=swap">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 <noscript><style>.js-only { display: none !important; }</style></noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2T3WNSDF4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-V2T3WNSDF4');
+  gtag('config', 'G-V2T3WNSDF4', { client_storage: 'none' }); // no cookies or browser storage
 </script>
 </head>
 <body>
@@ -267,7 +267,7 @@
   <footer class="foot">
     <div class="wrap">
       <span data-i18n="foot.disc">The Sciflux test is in development and has not been cleared or approved by any regulatory authority.</span>
-      <span>© 2026 Sciflux OÜ</span>
+      <span class="foot-end"><details class="privacy"><summary data-i18n="priv.h">Privacy</summary><p data-i18n="priv.p">This site uses Google Analytics without cookies to count visits and which sections are viewed. Nothing is stored in your browser. Google processes basic visit data.</p></details><span>© 2026 Sciflux OÜ</span></span>
     </div>
   </footer>
 </div>
@@ -409,6 +409,8 @@
  "pr.next": "次の段階",
  "ask.h": "投資家向け資料のご請求",
  "ask.p": "資料、データルーム、オンラインでのご相談は、創業者まで直接ご連絡ください。",
+ "priv.h": "プライバシー",
+ "priv.p": "このサイトでは、訪問数と閲覧されたセクションを把握するため、Cookie を使わずに Google アナリティクスを利用しています。お使いのブラウザには何も保存されません。基本的な訪問データは Google が処理します。",
  "foot.disc": "Sciflux の検査は開発中であり、いかなる規制当局の承認・認可も受けていません。",
  "c.h": "お問い合わせ",
  "c.1k": "臨床共同研究・研究について",
@@ -481,7 +483,11 @@
     if (fromUser) { window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' }); const h = p.querySelector('h1, h2'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); } }
   }
   const fromHash = () => (location.hash || '').replace('#', '');
-  addEventListener('hashchange', () => show(fromHash(), true));
+  addEventListener('hashchange', () => {
+    show(fromHash(), true);
+    // Count each tab as its own page in Google Analytics
+    if (typeof gtag === 'function') gtag('event', 'page_view', { page_title: 'Sciflux · ' + current, page_location: location.href });
+  });
   // Arrow keys move between tabs when the tab bar has focus
   document.querySelector('.tabs').addEventListener('keydown', e => {
     if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
@@ -500,6 +506,13 @@
     d.querySelectorAll('[data-close]').forEach(x => x.addEventListener('click', () => d.close ? d.close() : d.removeAttribute('open')));
     d.addEventListener('click', e => { if (e.target === d) d.close(); });
   });
+
+  /* ---------- Privacy note: close on outside click or Escape ---------- */
+  const priv = document.querySelector('.privacy');
+  if (priv) {
+    document.addEventListener('click', e => { if (priv.open && !priv.contains(e.target)) priv.open = false; });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && priv.open) { priv.open = false; priv.querySelector('summary').focus(); } });
+  }
 
   /* ---------- Copy buttons ---------- */
   const status = document.getElementById('copy-status');
