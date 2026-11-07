@@ -1,45 +1,752 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sciflux - Early Disease Monitoring</title>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-	<!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> -->
-    <link rel="stylesheet" href="styles.css">
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sciflux</title>
+<meta name="description" content="Sciflux is developing blood tests for neurodegeneration.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sciflux">
+<meta property="og:title" content="Sciflux">
+<meta property="og:description" content="Sciflux is developing blood tests for neurodegeneration.">
+<meta property="og:url" content="https://sciflux.tech/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.js-only { display: none !important; }</style></noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2T3WNSDF4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-V2T3WNSDF4');
 </script>
-
+</head>
 <body>
-    <header>
-        <div class="container">
-            <a class="home-link" href="index.html" rel="/">
-			<img src="assets/Sciflux.svg" alt="Sciflux Logo" class="logo">
-			</a>           
-        </div>
-    </header>
 
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <h2>CREATING A FUTURE WHERE DISEASE PREVENTION IS THE NORM.</h2>
-            <p>Our mission is to enable faster, cheaper and earlier detection of neurodegenerative disease.</p>
-            <div class="cta-container">
-			<a href="mailto:sten@sciflux.tech" class="cta-btn">Get in Touch</a></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 1794 768"><path fill="currentColor" fill-rule="evenodd" d="M1535.50,701.85C1339.23,663.31 1291.26,656.51 1216.00,656.55C1169.61,656.57 1148.25,658.51 1078.80,668.97C989.99,682.36 925.00,686.63 824.51,685.71C765.75,685.16 752.44,684.60 712.00,680.98C632.93,673.88 555.23,658.42 487.56,636.32C468.16,629.98 465.40,628.68 463.48,624.96L461.84,621.80L465.67,622.39C467.78,622.72 480.07,623.91 493.00,625.04C520.53,627.45 523.99,627.90 555.00,633.00C592.10,639.10 627.30,643.16 668.00,646.04C692.54,647.77 764.03,648.38 793.00,647.11C880.28,643.26 960.59,636.17 1059.00,623.60C1105.87,617.62 1122.29,616.58 1171.50,616.54C1217.45,616.50 1229.78,617.13 1269.51,621.53C1336.19,628.93 1406.13,645.10 1476.00,669.28C1487.83,673.37 1512.23,682.02 1530.23,688.51C1562.88,700.27 1562.96,700.31 1562.35,702.90C1562.02,704.33 1561.46,705.78 1561.12,706.13C1560.78,706.47 1549.25,704.55 1535.50,701.85ZM644.00,702.38C627.50,701.43 599.37,698.75 586.58,696.93C555.88,692.54 527.51,685.76 428.00,659.00C284.89,620.53 264.60,616.32 179.01,607.31C146.81,603.92 141.82,603.65 104.34,603.25C64.24,602.83 64.18,602.82 62.07,600.58L59.96,598.32L72.73,595.65C102.39,589.44 129.64,587.00 169.35,587.00C226.76,587.00 275.65,592.47 334.12,605.43C367.99,612.94 381.34,616.47 463.00,639.45C499.90,649.83 562.72,665.67 599.50,673.86C630.19,680.69 647.47,683.69 681.00,687.99C735.67,695.01 743.26,696.12 747.03,697.63C749.21,698.50 751.00,699.56 751.00,699.97C751.00,700.39 746.39,701.01 740.75,701.35C728.30,702.11 653.07,702.91 644.00,702.38ZM700.50,633.40C668.72,631.48 646.84,629.09 582.68,620.54C480.74,606.95 460.97,603.09 331.02,571.36C267.51,555.86 257.71,552.92 257.18,549.23C257.00,548.00 257.12,547.00 257.43,547.00C259.45,547.00 315.03,552.28 326.50,553.56C351.56,556.36 471.86,571.94 570.50,585.16C599.65,589.06 626.42,592.63 630.00,593.08C639.41,594.27 694.93,594.23 712.50,593.02C773.60,588.82 815.86,582.31 933.50,559.00C974.75,550.82 1015.48,542.99 1024.00,541.59C1078.35,532.67 1149.34,528.01 1230.79,528.00C1324.36,528.00 1361.99,533.24 1462.50,560.31C1483.41,565.95 1483.12,565.79 1481.57,570.54C1481.16,571.79 1431.62,567.75 1384.00,562.57C1328.83,556.57 1290.04,555.06 1239.00,556.90C1136.42,560.61 1102.80,565.78 958.50,599.99C865.28,622.09 838.40,627.09 789.00,631.53C772.62,633.00 714.21,634.24 700.50,633.40ZM1503.50,625.33C1462.47,622.75 1427.73,618.31 1383.50,609.97C1333.40,600.53 1302.53,596.15 1259.00,592.31C1228.18,589.59 1146.19,589.83 1112.00,592.74C1097.97,593.94 1077.95,595.39 1067.50,595.97C1057.05,596.55 1046.70,597.22 1044.50,597.45C1037.24,598.21 1043.03,596.30 1063.61,591.15C1153.66,568.57 1241.80,564.28 1342.00,577.57C1369.48,581.21 1393.54,585.34 1432.00,593.02C1488.35,604.27 1508.87,606.50 1555.50,606.47C1596.35,606.44 1621.14,604.29 1665.84,596.92C1683.19,594.05 1739.56,588.61 1741.23,589.64C1741.65,589.90 1742.00,591.10 1742.00,592.31C1741.99,594.33 1739.88,595.07 1715.25,601.77C1662.72,616.03 1630.53,621.77 1585.00,624.96C1572.01,625.87 1516.21,626.12 1503.50,625.33ZM541.51,572.90C513.01,570.98 479.09,562.88 462.00,553.92L458.50,552.09L473.56,552.04C488.42,552.00 563.03,548.98 599.00,546.97C621.49,545.71 646.13,543.82 684.50,540.41C735.77,535.85 789.89,535.92 821.45,540.59C830.18,541.88 834.69,543.00 831.16,543.00C830.51,543.00 817.95,545.03 803.24,547.52C766.52,553.73 664.19,566.39 618.00,570.45C579.22,573.86 563.27,574.37 541.51,572.90ZM182.00,524.39C171.70,523.14 157.19,520.65 147.00,518.38C124.55,513.39 94.52,504.90 90.91,502.53C83.97,497.99 83.95,497.82 84.24,454.17L84.50,415.19L98.92,423.06C127.03,438.39 173.42,450.39 192.16,447.18C209.78,444.16 222.16,432.88 228.60,414.00C231.36,405.89 231.14,390.85 228.12,381.04C221.32,358.99 209.19,344.39 179.36,322.32C150.56,301.02 142.34,294.34 130.97,283.00C113.48,265.56 104.78,251.55 97.08,228.42C90.02,207.24 88.62,198.37 88.59,175.00C88.57,157.54 88.90,153.00 90.77,144.40C101.41,95.63 127.27,64.09 166.83,51.61C197.07,42.07 236.24,43.38 271.50,55.10C283.46,59.07 310.80,71.85 312.99,74.49C313.89,75.58 311.20,83.03 300.44,109.19C292.90,127.51 286.66,142.60 286.56,142.72C286.47,142.84 277.42,139.38 266.45,135.03C243.30,125.85 233.78,123.13 221.98,122.32C202.29,120.97 187.33,129.16 180.01,145.31C175.87,154.45 174.65,162.23 175.23,175.78C176.47,204.68 185.23,216.40 234.47,255.00C272.83,285.08 285.21,296.76 295.72,312.76C304.95,326.82 311.34,342.64 314.49,359.27C322.95,403.80 313.08,450.45 288.36,482.72C273.17,502.56 248.38,517.15 220.75,522.53C212.68,524.10 188.96,525.24 182.00,524.39ZM460.66,522.46C423.52,515.48 393.43,491.81 376.94,456.62C367.52,436.52 359.98,405.70 357.01,375.14C353.13,335.32 359.43,270.87 370.38,238.37C386.22,191.32 414.72,164.70 456.50,157.90C467.74,156.07 494.89,156.31 510.00,158.37C537.85,162.15 551.98,166.87 556.82,174.00C561.83,181.37 558.07,200.91 545.76,231.50C543.55,237.00 541.46,241.82 541.11,242.21C540.77,242.59 534.03,240.42 526.14,237.38C508.78,230.69 499.92,228.67 490.45,229.25C463.79,230.86 449.37,255.78 444.86,308.00C443.21,327.02 443.19,367.82 444.82,380.00C449.28,413.40 457.31,433.91 469.58,443.25C476.92,448.83 482.71,450.51 494.50,450.45C506.75,450.39 516.41,447.92 541.03,438.54C550.49,434.94 558.66,432.00 559.18,432.00C559.79,432.00 560.02,444.32 559.82,464.92L559.50,497.83L556.50,502.17C554.25,505.42 551.63,507.44 546.00,510.25C537.64,514.43 524.36,518.96 513.00,521.50C502.38,523.88 471.24,524.45 460.66,522.46ZM1190.00,522.09C1159.95,515.44 1139.54,498.40 1128.65,470.85C1122.32,454.86 1117.19,426.99 1115.98,402.00C1114.92,380.28 1114.79,174.36 1115.82,168.50L1116.53,164.50L1159.74,164.24L1202.94,163.98L1203.23,282.74L1203.52,401.50L1205.77,412.13C1209.93,431.75 1214.08,440.21 1222.34,445.89C1238.42,456.95 1264.35,452.26 1273.46,436.64C1276.54,431.35 1285.07,406.30 1287.91,394.20C1289.10,389.08 1290.52,379.18 1291.06,372.20C1291.60,365.21 1292.33,315.74 1292.68,262.25L1293.31,165.00L1336.15,165.00L1379.00,165.00L1379.00,341.34L1379.00,517.69L1364.30,518.36C1356.21,518.73 1342.20,518.72 1333.17,518.35L1316.75,517.68L1313.48,514.41C1309.65,510.59 1308.16,506.46 1303.75,487.50C1301.96,479.80 1300.09,473.27 1299.59,473.00C1299.09,472.73 1296.47,475.43 1293.76,479.00C1278.29,499.43 1269.23,507.85 1254.92,515.04C1241.60,521.74 1234.86,523.20 1215.50,523.61C1201.58,523.90 1196.96,523.63 1190.00,522.09ZM1456.75,518.29C1427.48,518.04 1420.00,517.71 1420.00,516.68C1420.00,515.25 1434.76,485.85 1471.54,414.00C1484.92,387.88 1498.14,362.00 1500.94,356.50C1503.73,351.00 1506.56,344.36 1507.22,341.75C1509.22,333.81 1507.39,328.45 1493.68,302.25C1476.43,269.26 1428.78,174.63 1426.22,168.25L1424.11,163.00L1451.31,163.00C1466.26,163.01 1484.96,163.30 1492.86,163.66C1506.20,164.27 1507.44,164.50 1510.17,166.80C1514.43,170.38 1517.59,177.13 1552.99,258.31C1555.35,263.71 1557.63,267.76 1558.06,267.31C1559.83,265.47 1578.21,221.73 1592.92,184.32C1598.22,170.83 1600.51,166.91 1604.33,164.77C1605.93,163.87 1617.26,163.51 1647.25,163.40C1669.66,163.32 1688.00,163.48 1688.00,163.75C1688.00,165.04 1621.80,295.41 1615.52,306.50C1614.27,308.70 1610.89,315.16 1608.01,320.85C1600.49,335.70 1600.58,336.89 1610.83,357.38C1615.26,366.25 1628.28,391.73 1639.75,414.00C1651.22,436.27 1667.92,468.79 1676.86,486.25L1693.11,518.00L1651.09,518.00L1609.07,518.00L1605.38,514.76C1601.18,511.07 1601.15,511.01 1576.38,455.15C1566.79,433.51 1557.78,413.52 1556.36,410.73L1553.79,405.66L1543.81,429.58C1538.33,442.74 1529.10,465.20 1523.31,479.50C1511.27,509.27 1508.92,514.03 1505.19,516.23C1501.36,518.48 1497.79,518.63 1456.75,518.29ZM613.00,340.50L613.00,164.00L654.50,164.00L696.00,164.00L696.00,340.50L696.00,517.00L654.50,517.00L613.00,517.00L613.00,340.50ZM783.00,373.52L783.00,230.04L764.26,229.77L745.53,229.50L743.85,222.50C742.92,218.65 742.14,211.45 742.10,206.50C742.01,191.63 745.60,186.29 763.72,174.38C775.61,166.56 779.75,161.96 782.05,154.03C782.61,152.09 783.50,141.28 784.01,130.00C785.48,97.86 789.05,79.80 797.26,63.00C801.67,53.98 803.59,51.30 810.94,43.96C824.77,30.15 840.90,23.16 866.28,19.97C878.89,18.39 906.78,19.24 916.98,21.51C926.55,23.64 938.29,27.36 945.36,30.48L950.89,32.93L940.40,63.68C934.63,80.59 929.81,94.53 929.69,94.64C929.58,94.76 922.96,94.00 914.99,92.96C896.45,90.54 889.61,90.53 884.50,92.90C876.34,96.67 872.81,102.63 871.09,115.53C870.25,121.83 867.00,158.93 867.00,162.24C867.00,162.66 880.27,163.00 896.50,163.00L926.00,163.00L926.00,196.50L926.00,230.00L897.50,230.00L869.00,230.00L869.00,373.50L869.00,517.00L826.00,517.00L783.00,517.00L783.00,373.52ZM965.00,270.00L965.00,23.00L1006.50,23.00L1048.00,23.00L1048.00,270.00L1048.00,517.00L1006.50,517.00L965.00,517.00L965.00,270.00ZM640.41,114.03C622.30,110.16 611.40,97.17 609.08,76.70C606.17,51.14 615.78,33.58 635.93,27.61C642.80,25.57 661.41,25.47 668.74,27.42C681.63,30.85 691.09,38.24 696.17,48.83C699.05,54.83 699.41,56.64 699.81,66.82C700.16,75.60 699.86,79.61 698.49,84.66C694.97,97.67 685.75,107.40 672.50,112.11C665.79,114.49 647.63,115.58 640.41,114.03Z"/></symbol>
+  <symbol id="arrow" viewBox="0 0 16 16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 16 16"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 16 16"><path d="M5 3l8 5-8 5Z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 16 16"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<div class="app">
+  <header class="head">
+    <div class="wrap">
+      <a class="logo" href="#home" data-i18n-aria="logo" aria-label="Sciflux home"><svg viewBox="40 0 1720 730" aria-hidden="true"><use href="#logo"/></svg></a>
+      <nav class="tabs" data-i18n-aria="nav" aria-label="Sections">
+        <a href="#home" data-tab="home" data-i18n="t.home">Home</a>
+        <a href="#technology" data-tab="technology" data-i18n="t.tech">Technology</a>
+        <a href="#impact" data-tab="impact" data-i18n="t.impact">Impact</a>
+        <a href="#about" data-tab="about" data-i18n="t.about">About</a>
+        <a href="#investors" data-tab="investors" data-i18n="t.inv">Investors</a>
+      </nav>
+      <div class="head-end">
+        <div class="lang js-only" role="group" data-i18n-aria="langGroup" aria-label="Language">
+          <button type="button" id="lang-en" data-lang="en" lang="en" aria-pressed="true">EN</button>
+          <button type="button" id="lang-ja" data-lang="ja" lang="ja" aria-pressed="false">日本語</button>
         </div>
+        <noscript><a class="btn ghost sm" href="mailto:hello@sciflux.tech">Contact</a></noscript>
+        <button type="button" class="btn ghost sm js-only" id="open-contact" data-open="contact" data-i18n="contact">Contact</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HOME -->
+    <section class="panel" id="home" data-panel="home" aria-labelledby="home-h">
+      <div class="wrap">
+        <div class="home-grid">
+          <div class="home-copy">
+            <h1 id="home-h" data-i18n="home.h1">Creating a future where <span class="hl">timely intervention</span> is the norm.</h1>
+            <p class="lede" data-i18n="home.lede">Sciflux is developing blood tests that read the tiny particles your cells release as a fingerprint of disease. <strong>Our first test is for Alzheimer's</strong>, where doctors will be able to see whether treatment is working.</p>
+            <div class="ctas">
+              <a class="btn" href="mailto:hello@sciflux.tech?subject=Hello%20Sciflux"><span data-i18n="cta.touch">Get in touch</span></a>
+              <a class="btn ghost" href="#technology"><span data-i18n="cta.how">How it works</span> <svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+            </div>
+            <p class="status" data-i18n="home.status">In development. Not yet available for clinical use.</p>
+          </div>
+          <figure class="counter" style="margin:0">
+            <canvas id="vesicles" aria-hidden="true"></canvas>
+            <div class="inner">
+              <div class="count js-only" id="count" aria-hidden="true">0</div>
+              <p class="what js-only" data-i18n="home.count">people worldwide have developed dementia today.</p>
+              <noscript><p class="what">Every 3 seconds, someone in the world develops dementia.</p></noscript>
+              <p class="src" data-i18n="home.src">One every 3 seconds. Source: <a href="https://www.alzint.org/about/dementia-facts-figures/dementia-statistics/" target="_blank" rel="noopener">Alzheimer's Disease International</a>.</p>
+              <p class="quote" data-i18n="home.quote">Imagine a parent slowly forgetting who you are, and not knowing whether their treatment is helping.</p>
+            </div>
+            <figcaption class="sr-only" data-i18n="home.sr">Every 3 seconds, someone in the world develops dementia. A counter on this page shows how many people have developed dementia so far today.</figcaption>
+          </figure>
+        </div>
+        <div class="home-foot">
+          <div class="strip" aria-label="Partners and support" data-i18n-aria="strip">
+            <span class="lbl" data-i18n="strip.with">Working with</span>
+            <div class="grp">
+              <span class="mk">Scripps Research<small data-i18n="strip.scripps">Research collaboration</small></span>
+              <span class="mk">Confido Medical Centre<small data-i18n="strip.confido">Lead clinical partner</small></span>
+            </div>
+            <span class="lbl" data-i18n="strip.support">Supported by</span>
+            <div class="grp">
+              <span class="mk">Prototron<small data-i18n="strip.proto">Winning team, 2024</small></span>            </div>
+            <button type="button" class="textbtn quiet fam-link js-only" data-open="contact" data-focus="c-fam" data-i18n="home.fam">Patient or family member? Start here →</button>
+          </div>
+        </div>
+      </div>
     </section>
-      
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Sciflux - All rights reserved</p>
+
+    <!-- TECHNOLOGY -->
+    <section class="panel" id="technology" data-panel="technology" aria-labelledby="tech-h">
+      <div class="wrap tech-grid">
+        <div class="tech-copy">
+          <h2 id="tech-h" data-i18n="tech.h2"><span class="soft">Today's blood tests tell you amyloid is there.</span> Sciflux is built to show how the disease is changing.</h2>
+          <p data-i18n="tech.p">Every cell releases tiny particles called extracellular vesicles, a snapshot of the cell that made them. Published research shows they change with Alzheimer's. We read thousands of them from a single blood sample and turn them into a fingerprint of disease.</p>
+          <ol class="steps">
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4c5 7 9 12 9 17a9 9 0 0 1-18 0c0-5 4-10 9-17Z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 22a4 4 0 0 0 4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".6"/></svg></span><div><b data-i18n="s1.h">A routine blood draw</b><span data-i18n="s1.p">A small sample from the draw the clinic already does. No spinal tap, no scanner.</span></div></li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="2.5" y="9" width="27" height="14" rx="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="10" cy="16" r="2.4" fill="currentColor"/><circle cx="17" cy="16" r="2.4" fill="currentColor"/><circle cx="24" cy="16" r="2.4" fill="currentColor"/></svg></span><div><b data-i18n="s2.h">Read on our microfluidic chip</b><span data-i18n="s2.p">Thousands of particles from one sample, each one read individually.</span></div></li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4l10 6v12l-10 6-10-6V10Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 9l6 4-1 8-5 3-6-5 1-6Z" fill="currentColor" opacity=".35"/></svg></span><div><b data-i18n="s3.h">A fingerprint of disease</b><span data-i18n="s3.p">Machine learning turns the readings into one quantitative profile.</span></div></li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 22l7-4 6 3 6-8 5-2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 26h24" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".5"/></svg></span><div><b data-i18n="s4.h">Change the clinic can act on</b><span data-i18n="s4.p">Each result is compared with the patient's own baseline, so the neurologist sees what changed since the last visit.</span></div></li>
+          </ol>
         </div>
-    </footer>
+        <div class="tech-side js-only">
+        <figure class="flowcell" aria-describedby="fp-desc">
+          <canvas id="fp" aria-hidden="true"></canvas>
+          <div class="hud" id="fp-hud" aria-hidden="true">
+            <span class="chip" data-i18n="hud.chip">One blood sample · microfluidic chip</span>
+            <span class="chip" data-i18n="hud.sim">Illustration</span>
+          </div>
+          <div class="readout">
+            <div aria-hidden="true"><span data-i18n="ro.count">Particles read</span><b id="fp-n">0</b></div>
+            <div aria-hidden="true"><span data-i18n="ro.sub">Particle types</span><b id="fp-s">– %</b></div>            <button type="button" class="pause" id="pause" aria-pressed="false"><svg aria-hidden="true"><use href="#i-pause"/></svg><span id="pause-label">Pause animation</span></button>
+          </div>
+          <figcaption id="fp-desc" class="sr-only" data-i18n="fp.desc">An illustration of particles from one blood sample flowing through a chip. Each one is read as it passes, some are flagged as a subpopulation, and together they build up a fingerprint shape that settles as more particles are read.</figcaption>
+        </figure>
+        <div class="tech-foot">
+          <a class="link-next" href="#impact"><span data-i18n="next.impact">Why it matters</span> <svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="panel" id="impact" data-panel="impact" aria-labelledby="impact-h">
+      <div class="wrap">
+        <div class="impact-top">
+          <div class="impact-head">
+            <h2 id="impact-h" data-i18n="imp.h2">Treatments have arrived. Monitoring hasn't.</h2>
+            <p data-i18n="imp.p">The first drugs that slow Alzheimer's reached patients in the last few years. They cost tens of thousands per year, and clinicians still have no objective way to track how each patient responds.</p>
+            <div class="stats">
+              <div class="stat rose"><b class="num" data-i18n="st.1b">3 s</b><span data-i18n="st.1">Someone in the world develops dementia this often.</span></div>
+              <div class="stat"><b class="num">&gt;86M</b><span data-i18n="st.3">people live with early or mild Alzheimer's.</span></div>
+              <div class="stat"><b class="num">$1.3T</b><span data-i18n="st.4">yearly global cost of dementia.</span></div>
+            </div>
+          </div>
+          <div class="viz js-only">
+            <div class="viz-top">
+              <div class="seg" role="group" data-i18n-aria="seg.modes" aria-label="Compare ways of following a patient">
+                <button type="button" id="m-protein" data-mode="protein" aria-pressed="false" data-i18n="mode.protein">Protein test</button>
+                <button type="button" id="m-pet" data-mode="pet" aria-pressed="false" data-i18n="mode.pet">PET scan</button>
+                <button type="button" id="m-sciflux" data-mode="sciflux" aria-pressed="true">Sciflux</button>
+              </div>
+              <div class="seg small" role="group" data-i18n-aria="seg.patient" aria-label="Example patient" id="patient-seg">
+                <button type="button" id="pt-a" data-pt="a" aria-pressed="true" data-i18n="pt.a">Responding</button>
+                <button type="button" id="pt-b" data-pt="b" aria-pressed="false" data-i18n="pt.b">Progressing</button>
+              </div>
+            </div>
+            <div class="chart-box" id="chart-box"><svg id="chart" role="img" aria-labelledby="cap-t cap-x"></svg></div>
+            <div class="viz-cap" aria-live="polite"><b id="cap-t"></b><span id="cap-x"></span></div>
+            <p class="viz-note" data-i18n="viz.note">Illustration only, not patient data.</p>
+          </div>
+        </div>
+        <div class="who-grid">
+          <article class="who fam">
+            <span class="tag" data-i18n="fam.tag">Patients and families</span>
+            <h3 data-i18n="fam.h">Know whether treatment is helping</h3>
+            <p class="scene" data-i18n="fam.scene">“Is the medicine doing anything?”</p>
+            <ul><li data-i18n="fam.1">Designed to give a clear answer at each visit, in place of months of guessing</li><li data-i18n="fam.2">Evidence that helps keep patients on a treatment that works for them</li></ul>
+          </article>
+          <article class="who">
+            <span class="tag" data-i18n="doc.tag">Memory and private clinics</span>
+            <h3 data-i18n="doc.h">A number to guide each visit</h3>
+            <p class="scene" data-i18n="doc.scene">“Send a sample, get a report card.”</p>
+            <ul><li data-i18n="doc.1">Designed to confirm and set a baseline alongside pTau217</li><li data-i18n="doc.2">Built to track response against the patient's own baseline, in the existing blood draw</li></ul>
+            <a class="link-next" href="mailto:hello@sciflux.tech?subject=Sciflux%20sample%20partnership"><span data-i18n="cta.partner">Start a partnership</span> <svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+          </article>
+          <article class="who">
+            <span class="tag" data-i18n="ph.tag">Pharma and clinical trials</span>
+            <h3 data-i18n="ph.h">See response sooner</h3>
+            <p class="scene" data-i18n="ph.scene">“Which patients are responding, and when?”</p>
+            <ul><li data-i18n="ph.1">A repeatable, quantitative readout for trial cohorts</li><li data-i18n="ph.2">Built for more frequent readouts than imaging allows</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="panel" id="about" data-panel="about" aria-labelledby="about-h">
+      <div class="wrap about-grid">
+        <div class="about-main">
+          <h2 id="about-h" data-i18n="ab.h2">A biophysicist and a hardware builder, friends for twenty years.</h2>
+          <blockquote class="said" style="margin:0">
+            <p data-i18n="ab.quote">“The industry spent 30 years and billions to finally get treatments for Alzheimer's, and with them a real need to know whether they're working. That's the test we're building.”</p>
+          </blockquote>
+          <div class="people">
+            <article class="person">
+              <img src="data:image/jpeg;base64,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" alt="Portrait of Silver Jõemetsa" data-i18n-alt="alt.silver" width="88" height="88">
+              <div>
+                <span class="role" data-i18n="ab.r1">CEO and co-founder</span>
+                <h3>Silver Jõemetsa</h3>
+                <p data-i18n="ab.b1">PhD in biophysics from Chalmers and postdoc at Scripps Research. A decade of biomarker measurement experience.</p>
+              </div>
+            </article>
+            <article class="person">
+              <img src="data:image/jpeg;base64,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" alt="Portrait of Sten Krüüner" data-i18n-alt="alt.sten" width="88" height="88">
+              <div>
+                <span class="role" data-i18n="ab.r2">COO and co-founder</span>
+                <h3>Sten Krüüner</h3>
+                <p data-i18n="ab.b2">Mechanical and robotics engineer, veteran of three hardware startups: Cleveron, Milrem Robotics and ParcelSea. More than $50M in shipped products.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="side">
+          <div>
+            <h3 data-i18n="ab.adv">Advisers</h3>
+            <ul class="list">
+              <li><b data-i18n="adv.1b">Diagnostics lab builder</b><span data-i18n="adv.1">Senior diagnostics leader in global pharma. Has built a clinical diagnostics lab from the ground up through reimbursement.</span></li>
+              <li><b data-i18n="adv.2b">Microfluidics founder</b><span data-i18n="adv.2">Co-founder and CTO of a microfluidics company, with several patent families.</span></li>
+              <li><b data-i18n="adv.3b">Clinician and machine learning</b><span data-i18n="adv.3">Medical doctor with five years in primary care and three in clinical-trial regulation, plus experience in medical machine learning.</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 data-i18n="ab.part">Partners</h3>
+            <ul class="list">
+              <li><b>Confido Medical Centre, Estonia</b><span data-i18n="pa.1">Lead clinical partner</span></li>
+              <li><b data-i18n="pa.2b">University hospital, Norway · Medical university, South Korea</b><span data-i18n="pa.2">Clinical partners</span></li>
+              <li><b>Scripps Research, USA</b><span data-i18n="pa.3">Research collaboration</span></li>
+              <li class="soon"><b data-i18n="pa.4b">US academic Alzheimer's network</b><span data-i18n="pa.4">Upcoming</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTORS -->
+    <section class="panel" id="investors" data-panel="investors" aria-labelledby="inv-h">
+      <div class="wrap inv-grid">
+        <div class="inv-copy">
+          <h2 id="inv-h" data-i18n="inv.h2">Alzheimer's first. Pan-neuro next. <span class="hl">Natera for neuro.</span></h2>
+          <p data-i18n="inv.p">Natera and Guardant Health turned blood-based cancer monitoring into reimbursed standard of care. We are taking the same lab route for neurodegeneration, starting where the science is strongest and the need is biggest.</p>
+          <div class="metrics">
+            <div class="metric"><b class="num">158</b><span data-i18n="m.1">Alzheimer's drugs in clinical trials, about twice as many as a few years ago</span></div>
+            <div class="metric"><b class="num">~2M</b><span data-i18n="m.2">US patients eligible for anti-amyloid treatment</span></div>
+            <div class="metric"><b class="num">&gt;$900</b><span data-i18n="m.3">per test: the reimbursement precedent in cancer monitoring</span></div>
+          </div>
+        </div>
+        <div class="inv-copy">
+          <ol class="progress">
+            <li class="done"><span class="st" aria-hidden="true"></span><div><b data-i18n="pr.1">Proof of concept in human blood plasma</b></div><span class="when" data-i18n="pr.done">Done</span></li>
+            <li class="done"><span class="st" aria-hidden="true"></span><div><b data-i18n="pr.2">Analytical validation underway</b></div><span class="when" data-i18n="pr.now">Now</span></li>
+            <li class="now"><span class="st" aria-hidden="true"></span><div><b data-i18n="pr.3">Clinical validation with partner cohorts</b><em data-i18n="pr.3s">Ethics submitted for the first clinical cohort</em></div><span class="when" data-i18n="pr.now">Now</span></li>
+            <li class="next"><span class="st" aria-hidden="true"></span><div><b data-i18n="pr.4">US CLIA lab and lab-developed test</b><em data-i18n="pr.4s">Direct-pay and pharma revenue, then MolDX reimbursement. Parkinson's and ALS next.</em></div><span class="when" data-i18n="pr.next">Next</span></li>
+          </ol>
+          <div class="ask">
+            <h3 data-i18n="ask.h">Request the investor deck</h3>
+            <p data-i18n="ask.p">Write to the founders for the deck, the data room and a call.</p>
+            <a class="btn" href="mailto:investors@sciflux.tech?subject=Sciflux%20investor%20deck"><span data-i18n="cta.email">Email the founders</span> <svg class="arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span data-i18n="foot.disc">The Sciflux test is in development and has not been cleared or approved by any regulatory authority.</span>
+      <span>© 2026 Sciflux OÜ</span>
+    </div>
+  </footer>
+</div>
+
+<!-- Contact -->
+<dialog id="d-contact" aria-labelledby="contact-h">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2 id="contact-h" data-i18n="c.h">Get in touch</h2>
+      <button type="button" class="x" data-close data-i18n-aria="close" aria-label="Close"><svg aria-hidden="true"><use href="#close"/></svg></button>
+    </div>
+    <div>
+      <div class="mail">
+        <span class="k" data-i18n="c.1k">Clinical partnerships and science</span>
+        <p data-i18n="c.1p">For memory clinics, biobanks and trial teams. Reaches both founders.</p>
+        <div class="mailrow"><a href="mailto:hello@sciflux.tech?subject=Sciflux%20sample%20partnership">hello@sciflux.tech</a><button type="button" class="copy" id="copy-1" data-copy="hello@sciflux.tech">Copy</button></div>
+      </div>
+      <div class="mail">
+        <span class="k" data-i18n="c.2k">Investors and operations</span>
+        <p data-i18n="c.2p">For the investor deck and the data room.</p>
+        <div class="mailrow"><a href="mailto:investors@sciflux.tech?subject=Sciflux%20investor%20deck">investors@sciflux.tech</a><button type="button" class="copy" id="copy-2" data-copy="investors@sciflux.tech">Copy</button></div>
+      </div>
+      <div class="mail" id="c-fam" tabindex="-1">
+        <span class="k" data-i18n="c.3k">Patients and families</span>
+        <p data-i18n="c.3p">The test is not available yet. For questions about memory or treatment today, your doctor or memory clinic is the right first step. You are welcome to write to us about the research.</p>
+        <div class="mailrow"><a href="mailto:hello@sciflux.tech?subject=Sciflux%20research%20question">hello@sciflux.tech</a><button type="button" class="copy" id="copy-3" data-copy="hello@sciflux.tech">Copy</button></div>
+      </div>
+    </div>
+    <p class="where" data-i18n="c.where">Sciflux OÜ · Estonia</p>
+    <p class="sr-only" role="status" id="copy-status"></p>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+  /* ---------- Japanese (English is the page text) ---------- */
+  const JA = {
+ "hud.chip": "1回の血液サンプル・マイクロ流体チップ",
+ "hud.sim": "イメージ図",
+ "ro.count": "読み取った粒子",
+ "ro.sub": "粒子の種類",
+ "t.home": "ホーム",
+ "t.tech": "テクノロジー",
+ "t.impact": "インパクト",
+ "t.about": "私たちについて",
+ "t.inv": "投資家の方へ",
+ "contact": "お問い合わせ",
+ "home.h1": "<span class=\"hl\">適切なタイミングでの介入</span>が当たり前になる未来をつくる。",
+ "home.fam": "患者さん・ご家族の方はこちら →",
+ "home.lede": "Sciflux は、細胞が放出する微小な粒子を病気の「指紋」として読み取る血液検査を開発しています。<strong>最初の検査はアルツハイマー病向けです。</strong>医師は治療が効いているかを確かめられるようになります。",
+ "cta.email": "創業者にメールする",
+ "cta.touch": "お問い合わせ",
+ "cta.how": "仕組みを見る",
+ "home.status": "開発中です。臨床ではまだご利用いただけません。",
+ "home.count": "今日、世界で認知症を発症した人の数。",
+ "home.src": "3秒にひとり。出典:<a href=\"https://www.alzint.org/about/dementia-facts-figures/dementia-statistics/\" target=\"_blank\" rel=\"noopener\">国際アルツハイマー病協会(ADI)</a>",
+ "home.quote": "親が少しずつ、あなたのことを忘れていく。そして、その治療が役立っているのかさえわからない。そんな状況を想像してみてください。",
+ "home.sr": "世界では3秒にひとりが認知症を発症しています。このページのカウンターは、今日これまでに認知症を発症した人の数を示しています。",
+ "strip.with": "連携先",
+ "strip.scripps": "共同研究",
+ "strip.confido": "主要な臨床パートナー",
+ "strip.support": "支援",
+ "strip.proto": "2024年 受賞チーム",
+ "tech.h2": "<span class=\"soft\">現在の血液検査は、アミロイドがあることを教えてくれます。</span>Sciflux は、病気がどう変化しているかを示すために作られています。",
+ "tech.p": "すべての細胞は、細胞外小胞と呼ばれる微小な粒子を放出しています。小胞はそれを生み出した細胞のスナップショットです。発表された研究により、アルツハイマー病でこれらが変化することが示されています。私たちは1回の血液サンプルから数千個を読み取り、病気の「指紋」に変えます。",
+ "s1.h": "いつもの採血",
+ "s1.p": "医療機関がすでに行っている採血から、少量のサンプルを使います。腰椎穿刺も画像検査も不要です。",
+ "s2.h": "マイクロ流体チップで読み取る",
+ "s2.p": "1回のサンプルから数千個の粒子を、1つずつ読み取ります。",
+ "s3.h": "病気の「指紋」",
+ "s3.p": "機械学習で読み取り結果を1つの定量的なプロファイルにまとめます。",
+ "s4.h": "診療に生かせる変化",
+ "s4.p": "結果は患者さん自身のベースラインと比較されるため、神経内科医は前回の受診から何が変わったかを確認できます。",
+ "next.impact": "なぜ重要か",
+ "mode.protein": "タンパク質検査",
+ "mode.pet": "PET検査",
+ "pt.a": "効果あり",
+ "pt.b": "進行あり",
+ "viz.note": "説明用の図であり、患者データではありません。",
+ "imp.h2": "治療は始まった。モニタリングはまだない。",
+ "imp.p": "アルツハイマー病の進行を遅らせる初めての薬が、ここ数年で患者さんに届き始めました。費用は年間数万ドルにのぼりますが、医師には一人ひとりの治療反応を客観的に追う方法がまだありません。",
+ "st.1b": "3秒",
+ "st.1": "ごとに、世界のどこかで誰かが認知症を発症しています。",
+ "st.3": "早期または軽度のアルツハイマー病とともに生きる人の数。",
+ "st.4": "認知症による世界の年間コスト。",
+ "fam.tag": "患者さんとご家族",
+ "fam.h": "治療が役立っているかを知る",
+ "fam.scene": "「この薬は、効いているの?」",
+ "fam.1": "何か月も推測し続ける代わりに、受診のたびにはっきりした答えを出せるよう設計",
+ "fam.2": "効いている治療を続けるための根拠",
+ "doc.tag": "もの忘れ外来・民間クリニック",
+ "doc.h": "受診ごとの判断を支える数値",
+ "doc.scene": "「検体を送れば、レポートが届く」",
+ "doc.1": "pTau217 と組み合わせて診断を補い、ベースラインを設定できるよう設計",
+ "doc.2": "いつもの採血で、患者さん自身のベースラインと比べて治療反応を追跡できるよう設計",
+ "ph.tag": "製薬企業・臨床試験",
+ "ph.h": "治療反応をより早く確認",
+ "ph.scene": "「どの患者さんが、いつ反応しているのか?」",
+ "ph.1": "試験コホートのための、再現性のある定量的な指標",
+ "ph.2": "画像検査より頻繁に結果を得られるよう設計",
+ "cta.partner": "共同研究を始める",
+ "ab.h2": "生物物理学者とハードウェアのつくり手。20年来の友人同士です。",
+ "ab.quote": "「業界は30年と巨額の投資をかけて、ようやくアルツハイマー病の治療薬にたどり着きました。それとともに、治療が効いているかを知る本当の必要性が生まれました。私たちがつくっているのは、そのための検査です。」",
+ "ab.r1": "CEO・共同創業者",
+ "ab.r2": "COO・共同創業者",
+ "ab.b1": "チャルマース工科大学で生物物理学の博士号を取得し、スクリプス研究所でポスドク研究員を務めました。バイオマーカー測定に10年の経験があります。",
+ "ab.b2": "機械・ロボティクスエンジニア。Cleveron、Milrem Robotics、ParcelSea の3社のハードウェア系スタートアップで経験を積み、5,000万ドルを超える製品を世に送り出してきました。",
+ "ab.adv": "アドバイザー",
+ "adv.1b": "診断ラボの立ち上げ経験者",
+ "adv.1": "グローバル製薬企業の診断部門の幹部。臨床検査ラボをゼロから立ち上げ、保険償還まで導いた経験があります。",
+ "adv.2b": "マイクロ流体企業の創業者",
+ "adv.2": "マイクロ流体企業の共同創業者兼CTO。複数の特許ファミリーを持ちます。",
+ "adv.3b": "医師・機械学習",
+ "adv.3": "プライマリケアで5年、臨床試験の規制業務で3年の経験を持つ医師。医療分野の機械学習にも携わっています。",
+ "ab.part": "パートナー",
+ "pa.1": "主要な臨床パートナー",
+ "pa.2b": "大学病院(ノルウェー)・医科大学(韓国)",
+ "pa.2": "臨床パートナー",
+ "pa.3": "共同研究",
+ "pa.4b": "米国の学術系アルツハイマー病ネットワーク",
+ "pa.4": "予定",
+ "inv.h2": "まずアルツハイマー病、次に神経疾患全般へ。<span class=\"hl\">神経領域の Natera を目指して。</span>",
+ "inv.p": "Natera と Guardant Health は、血液によるがんのモニタリングを、保険償還される標準医療へと育てました。私たちは同じラボ検査のルートで神経変性疾患に取り組み、科学的根拠が最も強く、ニーズが最も大きい領域から始めます。",
+ "m.1": "臨床試験中のアルツハイマー病治療薬。数年前の約2倍",
+ "m.2": "抗アミロイド治療の対象となる米国の患者数",
+ "m.3": "1検査あたり。がんモニタリングで確立された償還の前例",
+ "pr.1": "ヒト血漿での概念実証",
+ "pr.2": "分析バリデーションを実施中",
+ "pr.3": "提携コホートでの臨床バリデーション",
+ "pr.3s": "最初の臨床コホートについて倫理審査を申請済み",
+ "pr.4": "米国のCLIAラボとラボ開発検査(LDT)",
+ "pr.4s": "自費検査と製薬企業向けの収益、その後 MolDX による償還へ。次はパーキンソン病とALS。",
+ "pr.done": "完了",
+ "pr.now": "進行中",
+ "pr.next": "次の段階",
+ "ask.h": "投資家向け資料のご請求",
+ "ask.p": "資料、データルーム、オンラインでのご相談は、創業者まで直接ご連絡ください。",
+ "foot.disc": "Sciflux の検査は開発中であり、いかなる規制当局の承認・認可も受けていません。",
+ "c.h": "お問い合わせ",
+ "c.1k": "臨床共同研究・研究について",
+ "c.1p": "もの忘れ外来、バイオバンク、臨床試験チームの方へ。創業者2名に届きます。",
+ "c.2k": "投資家・事業について",
+ "c.2p": "投資家向け資料とデータルームについて。",
+ "c.3k": "患者さんとご家族",
+ "c.3p": "この検査はまだご利用いただけません。現在の記憶の症状や治療については、まず主治医やもの忘れ外来にご相談ください。研究についてのご質問は、お気軽にお寄せください。",
+ "c.where": "Sciflux OÜ · エストニア",
+ "fp.desc": "1回の血液サンプルから得た粒子がチップを流れる様子のイメージ図です。粒子は通過するたびに読み取られ、読み取りが増えるにつれて指紋の形が定まっていきます。"
+};
+  const JA_ATTR = {"logo": "Sciflux ホーム", "nav": "セクション", "langGroup": "言語", "strip": "連携先と支援", "seg.modes": "患者を追跡する方法を比較", "seg.patient": "例の患者", "close": "閉じる", "alt.silver": "Silver Jõemetsa の写真", "alt.sten": "Sten Krüüner の写真"};
+  const STR = {
+    en: {
+      pause: 'Pause animation', play: 'Play animation', detection: 'READ', fingerprint: 'Fingerprint',
+      copy: 'Copy', copied: 'Copied', selected: 'Selected', copiedMsg: 'Address copied.', selectedMsg: 'Address selected. Press Ctrl+C or Cmd+C to copy.',
+      course: 'Treatment · 18 months', start: 'Start', mo: m => m + ' mo', positive: 'Positive', cantSay: "Is it working? The test can't say.",
+      pet: 'PET scan', oneImage: 'one image', costly: 'too costly to repeat routinely', baseline: "patient's own baseline", stable: 'stable', fromBase: n => '+' + n + ' from baseline',
+      caps: {
+        protein: ['Same answer at every visit', "A single-protein test confirms amyloid is there. Its level also moves with kidney function and time of day, so it cannot show how one patient is changing."],
+        pet: ['Detailed, but rarely repeated', 'A PET scan costs $5,000 to $8,000 and is hard to schedule, so most patients get one and then wait.'],
+        a: ['A number that moves with the disease', "Measured at every visit against the patient's own baseline. Here the score holds steady, a sign the treatment may be working."],
+        b: ['Change you can see early', 'The score climbs away from baseline within months, so the care team can review the plan without waiting for symptoms.']
+      }
+    },
+    ja: {
+      pause: 'アニメーションを停止', play: 'アニメーションを再生', detection: '読み取り', fingerprint: '指紋',
+      copy: 'コピー', copied: 'コピーしました', selected: '選択しました', copiedMsg: 'アドレスをコピーしました。', selectedMsg: 'アドレスを選択しました。Ctrl+C または Cmd+C でコピーしてください。',
+      course: '治療期間・18か月', start: '開始', mo: m => m + 'か月', positive: '陽性', cantSay: '効いている?検査ではわからない。',
+      pet: 'PET検査', oneImage: '1回の画像', costly: '費用が高く、繰り返しにくい', baseline: '患者さん自身のベースライン', stable: '安定', fromBase: n => 'ベースラインから+' + n,
+      caps: {
+        protein: ['受診のたびに同じ答え', '単一タンパク質検査はアミロイドがあることを確認できます。しかし濃度は腎機能や時間帯でも変動するため、一人の患者さんの変化は示せません。'],
+        pet: ['詳しいが、繰り返しにくい', 'PET検査は1回5,000〜8,000ドルかかり、予約も難しいため、多くの患者さんは1回撮影したきりになります。'],
+        a: ['病気とともに動く数値', '受診のたびに、患者さん自身のベースラインと比べて測定します。この例ではスコアが安定しており、治療が効いている可能性を示しています。'],
+        b: ['早い段階で見える変化', 'スコアは数か月のうちにベースラインから上昇します。症状の悪化を待たずに、治療計画を見直せます。']
+      }
+    }
+  };
+  const textEls = [...document.querySelectorAll('[data-i18n]')].map(el => ({ el, key: el.dataset.i18n, en: el.innerHTML }));
+  const ariaEls = [...document.querySelectorAll('[data-i18n-aria]')].map(el => ({ el, key: el.dataset.i18nAria, en: el.getAttribute('aria-label') }));
+  const altEls = [...document.querySelectorAll('[data-i18n-alt]')].map(el => ({ el, key: el.dataset.i18nAlt, en: el.getAttribute('alt') }));
+  let lang = 'en';
+  const t = () => STR[lang];
+  function setLang(next, save) {
+    lang = next === 'ja' ? 'ja' : 'en';
+    document.documentElement.lang = lang;
+    for (const x of textEls) x.el.innerHTML = lang === 'ja' && JA[x.key] != null ? JA[x.key] : x.en;
+    for (const x of ariaEls) x.el.setAttribute('aria-label', lang === 'ja' && JA_ATTR[x.key] ? JA_ATTR[x.key] : x.en);
+    for (const x of altEls) x.el.setAttribute('alt', lang === 'ja' && JA_ATTR[x.key] ? JA_ATTR[x.key] : x.en);
+    document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    document.querySelectorAll('.copy').forEach(b => { if (!b.classList.contains('done')) b.textContent = t().copy; });
+    if (save) store.set('sciflux-lang', lang);
+    if (typeof labelPause === 'function') { labelPause(); if (!fraf) fDraw(); }    renderChart();
+  }
+  document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang, true)));
+
+  /* ---------- Tabs, routed on the hash ---------- */
+  const TABS = ['home', 'technology', 'impact', 'about', 'investors'];
+  const panels = Object.fromEntries(TABS.map(id => [id, document.querySelector(`[data-panel="${id}"]`)]));
+  const tabLinks = [...document.querySelectorAll('[data-tab]')];
+  let current = null;
+  function show(id, fromUser) {
+    if (!TABS.includes(id)) id = 'home';
+    if (id === current) return;
+    const p = panels[id];
+    tabLinks.forEach(a => a.dataset.tab === id ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+    current = id;
+    if (id === 'impact') renderChart();
+    if (fromUser) { window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' }); const h = p.querySelector('h1, h2'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); } }
+  }
+  const fromHash = () => (location.hash || '').replace('#', '');
+  addEventListener('hashchange', () => show(fromHash(), true));
+  // Arrow keys move between tabs when the tab bar has focus
+  document.querySelector('.tabs').addEventListener('keydown', e => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    const i = TABS.indexOf(current), n = TABS[(i + (e.key === 'ArrowRight' ? 1 : TABS.length - 1)) % TABS.length];
+    location.hash = n; document.querySelector(`[data-tab="${n}"]`).focus(); e.preventDefault();
+  });
+
+  /* ---------- Dialogs ---------- */
+  const dialogs = { contact: document.getElementById('d-contact') };
+  document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => {
+    const d = dialogs[b.dataset.open]; if (d.showModal) d.showModal(); else d.setAttribute('open', '');
+    const f = b.dataset.focus && document.getElementById(b.dataset.focus);
+    if (f) { f.scrollIntoView({ block: 'start' }); f.focus({ preventScroll: true }); }
+  }));
+  Object.values(dialogs).forEach(d => {
+    d.querySelectorAll('[data-close]').forEach(x => x.addEventListener('click', () => d.close ? d.close() : d.removeAttribute('open')));
+    d.addEventListener('click', e => { if (e.target === d) d.close(); });
+  });
+
+  /* ---------- Copy buttons ---------- */
+  const status = document.getElementById('copy-status');
+  const announce = m => { status.textContent = ''; setTimeout(() => { status.textContent = m; }, 40); };
+  document.querySelectorAll('.copy').forEach(btn => btn.addEventListener('click', () => {
+    const reset = () => setTimeout(() => { btn.textContent = t().copy; btn.classList.remove('done'); }, 1800);
+    const ok = () => { btn.textContent = t().copied; btn.classList.add('done'); announce(t().copiedMsg); reset(); };
+    const fallback = () => { const a = btn.parentElement.querySelector('a'); const r = document.createRange(); r.selectNodeContents(a); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = t().selected; announce(t().selectedMsg); reset(); };
+    try { navigator.clipboard.writeText(btn.dataset.copy).then(ok, fallback); } catch (e) { fallback(); }
+  }));
+
+  /* ---------- Home: live counter over drifting vesicles ---------- */
+  const countEl = document.getElementById('count');
+  const t0 = performance.now();
+  let shown = -1;
+  const canvas = document.getElementById('vesicles'), ctx = canvas.getContext('2d');
+  let W = 0, H = 0, dpr = 1, col = {};
+  const ves = [];
+  const readCol = () => { col = { teal: css('--teal'), rose: css('--rose'), deep: css('--deep') }; };
+  function resize() {
+    const r = canvas.getBoundingClientRect(); dpr = Math.min(devicePixelRatio || 1, 2); W = r.width; H = r.height;
+    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const target = Math.round(Math.max(26, Math.min(70, (W * H) / 7000)));
+    while (ves.length < target) ves.push({ x: Math.random() * W, y: Math.random() * H, r: 3 + Math.random() * 9, vx: (Math.random() - 0.5) * 0.012, vy: -0.004 - Math.random() * 0.01, ph: Math.random() * 6.28, rose: 0, pulse: 0 });
+    ves.length = target;
+  }
+  function drawVes(dt) {
+    ctx.clearRect(0, 0, W, H);
+    for (const v of ves) {
+      if (dt) { v.ph += dt * 0.0011; v.x += (v.vx + Math.sin(v.ph) * 0.006) * dt; v.y += v.vy * dt;
+        if (v.y < -20) { v.y = H + 20; v.x = Math.random() * W; v.rose = 0; } if (v.x < -20) v.x = W + 20; if (v.x > W + 20) v.x = -20;
+        if (v.pulse > 0) v.pulse = Math.max(0, v.pulse - dt * 0.0007); }
+      const c = v.rose ? col.rose : col.teal;
+      ctx.globalAlpha = v.rose ? 0.95 : 0.42;
+      ctx.beginPath(); ctx.arc(v.x, v.y, v.r, 0, 6.283); ctx.lineWidth = Math.max(1.2, v.r * 0.28); ctx.strokeStyle = c; ctx.stroke();
+      ctx.globalAlpha = v.rose ? 0.35 : 0.12; ctx.fillStyle = c; ctx.fill();
+      if (v.pulse > 0) { ctx.globalAlpha = v.pulse * 0.7; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(v.x, v.y, v.r + 26 * (1 - v.pulse) + 3, 0, 6.283); ctx.strokeStyle = col.rose; ctx.stroke(); }
+    }
+    ctx.globalAlpha = 1;
+  }
+  function tick() {
+    const now = new Date(), midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const n = Math.floor((now - midnight) / 3000);
+    if (n !== shown) {
+      const first = shown < 0; shown = n; countEl.textContent = n.toLocaleString('en-US');
+      if (!first) {
+        countEl.classList.remove('bump'); void countEl.offsetWidth; countEl.classList.add('bump');
+        const cands = ves.filter(v => !v.rose && v.y > H * 0.15 && v.y < H * 0.6);
+        const v = cands[Math.floor(Math.random() * cands.length)] || ves[0];
+        if (v) { v.rose = 1; v.pulse = 1; v.r = Math.max(v.r, 7); }
+        if (!raf) drawVes(0);
+      }
+    }
+  }
+  let raf = 0, last = 0;
+  const loop = now => { const dt = Math.min(48, now - (last || now)); last = now; drawVes(dt); raf = requestAnimationFrame(loop); };
+  const startV = () => { if (!raf && !reduce.matches && !document.hidden && current === 'home') { last = 0; raf = requestAnimationFrame(loop); } };
+  const stopV = () => { cancelAnimationFrame(raf); raf = 0; };
+  readCol(); resize(); drawVes(0);
+  new ResizeObserver(() => { resize(); drawVes(0); }).observe(canvas);
+  document.addEventListener('visibilitychange', () => document.hidden ? stopV() : startV());
+  reduce.addEventListener('change', () => { stopV(); startV(); drawVes(0); });
+  addEventListener('hashchange', () => { current === 'home' ? (resize(), startV()) : stopV(); });
+  setInterval(tick, 250);
+
+
+  /* ---------- Technology: particles build a fingerprint (illustrative, not the method) ---------- */
+  const fc = document.getElementById('fp'), fx = fc.getContext('2d'), fhud = document.getElementById('fp-hud');
+  const fpN = document.getElementById('fp-n'), fpC = document.getElementById('fp-c'), fpS = document.getElementById('fp-s');
+  const pauseBtn = document.getElementById('pause'), pauseLabel = document.getElementById('pause-label');
+  let paused = store.get('sciflux-paused') === '1';
+  const AX = 9, SHAPE = [0.84, 0.52, 0.72, 0.4, 0.9, 0.58, 0.68, 0.46, 0.76];
+  const acc = new Float32Array(AX); let nRead = 0, subRead = 0;
+  const fparts = []; let FW = 0, FH = 0, fdpr = 1, fcol = {}, ft = 0, L = null;
+  const randn = () => { let u = 0, v = 0; while (!u) u = Math.random(); while (!v) v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
+  const fRead = () => { fcol = { rose: css('--rose'), roseInk: css('--rose-ink'), teal: css('--teal'), tealInk: css('--teal-ink'), wash: css('--teal-wash'), line: css('--line'), ink2: css('--ink-2'), surface: css('--surface') }; };
+  const remPx = () => parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+  const ffont = s => `600 ${Math.round(remPx() * s)}px "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", "Noto Sans JP", system-ui, sans-serif`;
+  function fLayout() {
+    const top = Math.max(60, fhud.offsetHeight + 14 + remPx() * 1.6);
+    if (FW >= 560) {
+      const chH = Math.min(FH - top - 30, 190), chTop = top + (FH - top - chH) / 2 - 6;
+      return { narrow: false, top: chTop, h: chH, x1: FW * 0.6, win: FW * 0.34, cx: FW * 0.8, cy: chTop + chH / 2, r: Math.min(FW * 0.15, (FH - top) * 0.4) };
+    }
+    const chH = Math.max(80, (FH - top) * 0.36);
+    return { narrow: true, top, h: chH, x1: FW * 0.78, win: FW * 0.42, cx: FW / 2, cy: top + chH + (FH - top - chH) / 2 - 8, r: Math.min(FW * 0.3, (FH - top - chH) * 0.32) };
+  }
+  const fSpawn = (p, init) => { p.sub = Math.random() < 0.18; p.lane = Math.random(); p.x = init ? Math.random() * L.x1 : -10 - Math.random() * 80; p.v = 0.5 + Math.random() * 0.5; p.r = 2 + Math.random() * 3.2; p.ph = Math.random() * 6.28; p.read = false; p.flash = 0; p.state = 0; p.t = 0; return p; };
+  function fResize() {
+    const r = fc.getBoundingClientRect(); fdpr = Math.min(devicePixelRatio || 1, 2); FW = r.width; FH = r.height;
+    if (!FW) return;
+    fc.width = Math.round(FW * fdpr); fc.height = Math.round(FH * fdpr); fx.setTransform(fdpr, 0, 0, fdpr, 0, 0);
+    L = fLayout();
+    const target = Math.round(Math.max(30, Math.min(80, L.x1 / 7)));
+    while (fparts.length < target) fparts.push(fSpawn({}, true));
+    fparts.length = target;
+  }
+  const laneY = p => L.top + 14 + p.lane * (L.h - 28) + Math.sin(p.x * 0.014 + ft * 0.0012 + p.ph) * 6;
+  function fStep(dt) {
+    if (!L) return;
+    for (const p of fparts) {
+      if (p.state === 0) {
+        p.x += p.v * dt * 0.09;
+        if (!p.read && p.x >= L.win) { p.read = true; p.flash = 1; }
+        if (p.x >= L.x1) { p.state = 1; p.t = 0; p.sx = p.x; p.sy = laneY(p); }
+      } else {
+        p.t += dt / 650;
+        if (p.t >= 1) {
+          nRead++; if (p.sub) subRead++;
+          for (let i = 0; i < AX; i++) acc[i] += SHAPE[i] + randn() * 0.35;
+          fSpawn(p, false);
+        }
+      }
+      if (p.flash > 0) p.flash = Math.max(0, p.flash - dt * 0.003);
+    }
+  }
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  function fDraw() {
+    if (!L) return;
+    fx.clearRect(0, 0, FW, FH);
+    fx.lineWidth = 1.5; fx.strokeStyle = fcol.line;
+    for (const edge of [L.top, L.top + L.h]) {
+      fx.beginPath();
+      for (let x = 0; x <= L.x1; x += 6) { const y = edge + Math.sin(x * 0.012 + ft * 0.0012) * 4; x ? fx.lineTo(x, y) : fx.moveTo(x, y); }
+      fx.stroke();
+    }
+    const ww = Math.max(30, FW * 0.06);
+    fx.fillStyle = fcol.wash; fx.beginPath(); fx.roundRect ? fx.roundRect(L.win - ww / 2, L.top - 10, ww, L.h + 20, 10) : fx.rect(L.win - ww / 2, L.top - 10, ww, L.h + 20); fx.fill();
+    fx.fillStyle = fcol.tealInk; fx.font = ffont(0.72); fx.textAlign = 'center'; fx.fillText(t().detection, L.win, L.top - 16);
+    // fingerprint
+    const n = Math.max(1, nRead), vals = [...acc].map(v => Math.max(0.08, Math.min(1, v / n)));
+    fx.strokeStyle = fcol.line; fx.lineWidth = 1;
+    for (const k of [0.33, 0.66, 1]) { fx.beginPath(); for (let i = 0; i <= AX; i++) { const a = -Math.PI / 2 + i * 2 * Math.PI / AX, x = L.cx + Math.cos(a) * L.r * k, y = L.cy + Math.sin(a) * L.r * k; i ? fx.lineTo(x, y) : fx.moveTo(x, y); } fx.stroke(); }
+    for (let i = 0; i < AX; i++) { const a = -Math.PI / 2 + i * 2 * Math.PI / AX; fx.beginPath(); fx.moveTo(L.cx, L.cy); fx.lineTo(L.cx + Math.cos(a) * L.r, L.cy + Math.sin(a) * L.r); fx.stroke(); }
+    fx.beginPath();
+    for (let i = 0; i <= AX; i++) { const j = i % AX, a = -Math.PI / 2 + j * 2 * Math.PI / AX, x = L.cx + Math.cos(a) * L.r * vals[j], y = L.cy + Math.sin(a) * L.r * vals[j]; i ? fx.lineTo(x, y) : fx.moveTo(x, y); }
+    fx.globalAlpha = 0.28; fx.fillStyle = fcol.teal; fx.fill(); fx.globalAlpha = 1; fx.lineWidth = 2.2; fx.strokeStyle = fcol.tealInk; fx.lineJoin = 'round'; fx.stroke();
+    fx.fillStyle = fcol.ink2; fx.font = ffont(0.72); fx.textAlign = 'center'; fx.fillText(t().fingerprint, L.cx, L.cy + L.r + 22);
+    // particles
+    for (const p of fparts) {
+      let x, y, al = 0.9, r = p.r;
+      if (p.state === 0) { x = p.x; y = laneY(p); al = p.read ? 0.55 : 0.9; }
+      else { const e = ease(p.t); x = p.sx + (L.cx - p.sx) * e; y = p.sy + (L.cy - p.sy) * e; al = 0.9 * (1 - p.t * 0.85); r = p.r * (1 - p.t * 0.6); }
+      if (p.flash > 0) { fx.beginPath(); fx.arc(x, y, r + 9 * (1 - p.flash) + 2, 0, 6.283); fx.strokeStyle = p.sub ? fcol.roseInk : fcol.tealInk; fx.globalAlpha = p.flash * 0.8; fx.lineWidth = 1.2; fx.stroke(); }
+      fx.beginPath(); fx.arc(x, y, r, 0, 6.283); fx.fillStyle = p.sub ? fcol.rose : fcol.teal; fx.globalAlpha = al; fx.fill(); fx.globalAlpha = 1;
+    }
+  }
+  const fReadout = () => { fpN.textContent = nRead.toLocaleString('en-US'); if (nRead > 5) fpS.textContent = (subRead / nRead * 100).toFixed(1) + ' %'; if (fpC) fpC.textContent = Math.min(99, Math.round(100 * (1 - 1 / Math.sqrt(1 + nRead / 5)))) + ' %'; };
+  let fraf = 0, flast = 0, fro = 0;
+  const floop = now => { const dt = Math.min(48, now - (flast || now)); flast = now; ft += dt; fStep(dt); fDraw(); if (now - fro > 250) { fReadout(); fro = now; } fraf = requestAnimationFrame(floop); };
+  const fStart = () => { if (!fraf && !paused && !reduce.matches && !document.hidden && current === 'technology') { flast = 0; fraf = requestAnimationFrame(floop); } };
+  const fStop = () => { cancelAnimationFrame(fraf); fraf = 0; };
+  function labelPause() {
+    pauseBtn.hidden = reduce.matches;
+    pauseBtn.setAttribute('aria-pressed', String(paused));
+    pauseLabel.textContent = paused ? t().play : t().pause;
+    pauseBtn.querySelector('use').setAttribute('href', paused ? '#i-play' : '#i-pause');
+  }
+  pauseBtn.addEventListener('click', () => { paused = !paused; store.set('sciflux-paused', paused ? '1' : '0'); paused ? fStop() : fStart(); labelPause(); });
+  function fWarm() { fResize(); if (!L) return; if (!nRead) for (let i = 0; i < 1400; i++) { ft += 16; fStep(16); } fDraw(); fReadout(); }
+  new ResizeObserver(() => { fResize(); if (!fraf) fDraw(); }).observe(fc);
+  document.addEventListener('visibilitychange', () => document.hidden ? fStop() : fStart());
+  reduce.addEventListener('change', () => { fStop(); labelPause(); fStart(); fDraw(); });
+  addEventListener('hashchange', () => { if (current === 'technology') { fRead(); fWarm(); fStart(); } else fStop(); });
+  fRead();
+  const retheme = () => { readCol(); drawVes(0); fRead(); if (!fraf) fDraw(); renderChart(); };
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', retheme);
+  new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+  /* ---------- Technology: what each method reports over 18 months ---------- */
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (tag, a, txt) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; return e; };
+  const months = [0, 3, 6, 9, 12, 15, 18];
+  const series = { a: [50, 52, 49, 51, 50, 52, 51], b: [50, 55, 59, 64, 68, 73, 78] };
+  let mode = 'sciflux', pt = 'a';
+  const chart = document.getElementById('chart'), box = document.getElementById('chart-box');
+  const capT = document.getElementById('cap-t'), capX = document.getElementById('cap-x'), pseg = document.getElementById('patient-seg');
+  function renderChart() {
+    if (!box.clientWidth) return;
+    const s = t();
+    const W2 = Math.max(280, Math.round(box.clientWidth)), narrow = W2 < 480;
+    const H2 = Math.round(Math.max(200, Math.min(narrow ? 260 : 290, innerHeight * (innerHeight < 820 ? 0.2 : 0.275))));
+    const X0 = narrow ? 30 : 44, X1 = W2 - (narrow ? 18 : 30), Y0 = H2 - 40, Y1 = 40;
+    const xm = m => X0 + (m / 18) * (X1 - X0), ys = v => Y0 - (v / 100) * (Y0 - Y1);
+    chart.setAttribute('viewBox', `0 0 ${W2} ${H2}`); chart.setAttribute('width', W2); chart.setAttribute('height', H2);
+    chart.replaceChildren();
+    const ticks = narrow ? [0, 6, 12, 18] : months;
+    for (const m of ticks) {
+      chart.append(el('line', { x1: xm(m), x2: xm(m), y1: Y1 - 6, y2: Y0, stroke: 'var(--line)', 'stroke-width': 1, 'stroke-dasharray': '2 5' }));
+      chart.append(el('text', { x: xm(m), y: Y0 + 22, 'text-anchor': 'middle' }, m === 0 ? s.start : s.mo(m)));
+    }
+    chart.append(el('line', { x1: X0, x2: X1, y1: Y0, y2: Y0, stroke: 'var(--ink-2)', 'stroke-width': 1.2 }));
+    chart.append(el('text', { x: X0, y: 18 }, s.course));
+    if (mode === 'protein') {
+      for (const m of [0, 6, 12, 18]) {
+        const w = narrow ? 54 : 70;
+        chart.append(el('rect', { x: xm(m) - w / 2 - (m === 18 ? w / 4 : 0) + (m === 0 ? w / 4 : 0), y: ys(52) - 16, width: w, height: 32, rx: 16, fill: 'var(--rose-wash)', stroke: 'var(--rose)', 'stroke-width': 1.2 }));
+        chart.append(el('text', { x: xm(m) - (m === 18 ? w / 4 : 0) + (m === 0 ? w / 4 : 0), y: ys(52) + 5, 'text-anchor': 'middle', style: 'fill:var(--rose-ink);font-weight:700' }, s.positive));
+      }
+      chart.append(el('text', { x: (X0 + X1) / 2, y: ys(52) + 50, 'text-anchor': 'middle' }, s.cantSay));
+    } else if (mode === 'pet') {
+      const w0 = narrow ? 70 : 86;
+      chart.append(el('rect', { x: xm(0), y: ys(70), width: w0, height: ys(30) - ys(70), rx: 14, fill: 'var(--teal-wash)', stroke: 'var(--teal-ink)', 'stroke-width': 1.2 }));
+      chart.append(el('text', { x: xm(0) + w0 / 2, y: ys(50) - 4, 'text-anchor': 'middle', style: 'fill:var(--teal-ink);font-weight:700' }, s.pet));
+      chart.append(el('text', { x: xm(0) + w0 / 2, y: ys(50) + 14, 'text-anchor': 'middle' }, s.oneImage));
+      for (const m of [6, 12, 18]) {
+        const w = narrow ? 44 : 60, off = m === 18 ? w / 2 : 0;
+        chart.append(el('rect', { x: xm(m) - w / 2 - off, y: ys(64), width: w, height: ys(36) - ys(64), rx: 12, fill: 'var(--bg-2)', stroke: 'var(--line)', 'stroke-width': 1.2, 'stroke-dasharray': '4 4' }));
+        chart.append(el('text', { x: xm(m) - off, y: ys(50) + 5, 'text-anchor': 'middle', style: 'font-size:1rem' }, '?'));
+      }
+      chart.append(el('text', { x: (xm(6) + xm(18)) / 2, y: ys(30) + 26, 'text-anchor': 'middle' }, s.costly));
+    } else {
+      const vals = series[pt], c = pt === 'b' ? 'var(--rose-ink)' : 'var(--teal-ink)';
+      chart.append(el('rect', { x: X0, y: ys(56), width: X1 - X0, height: ys(44) - ys(56), fill: 'var(--teal-wash)' }));
+      chart.append(el('text', { x: X0 + 8, y: ys(44) + 18, style: 'fill:var(--teal-ink)' }, s.baseline));
+      const P = months.map((m, i) => [xm(m), ys(vals[i])]);
+      let d = `M${P[0][0]},${P[0][1].toFixed(1)}`;
+      for (let i = 0; i < P.length - 1; i++) {
+        const p0 = P[Math.max(0, i - 1)], p1 = P[i], p2 = P[i + 1], p3 = P[Math.min(P.length - 1, i + 2)];
+        d += ` C${(p1[0] + (p2[0] - p0[0]) / 6).toFixed(1)},${(p1[1] + (p2[1] - p0[1]) / 6).toFixed(1)} ${(p2[0] - (p3[0] - p1[0]) / 6).toFixed(1)},${(p2[1] - (p3[1] - p1[1]) / 6).toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
+      }
+      chart.append(el('path', { d, fill: 'none', stroke: c, 'stroke-width': 3, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }));
+      P.forEach(([x, y]) => chart.append(el('circle', { cx: x, cy: y, r: 5, fill: 'var(--surface)', stroke: c, 'stroke-width': 2.5 })));
+      const lv = vals[vals.length - 1];
+      chart.append(el('text', { x: X1, y: ys(lv) - 14, 'text-anchor': 'end', style: `fill:${c};font-weight:700` }, pt === 'b' ? s.fromBase(lv - vals[0]) : s.stable));
+    }
+    chart.querySelectorAll('text').forEach(tx => {
+      const bb = tx.getBBox(); if (!bb.width) return;
+      if (bb.x < 2 || bb.x + bb.width > W2 - 2) { const room = Math.min(W2 - 2, bb.x + bb.width) - Math.max(2, bb.x); tx.style.fontSize = (parseFloat(getComputedStyle(tx).fontSize) * Math.max(0.6, room / bb.width)).toFixed(1) + 'px'; }
+    });
+    pseg.hidden = mode !== 'sciflux';
+    const cp = mode === 'sciflux' ? s.caps[pt] : s.caps[mode];
+    capT.textContent = cp[0]; capX.textContent = cp[1];
+    document.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+    document.querySelectorAll('[data-pt]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.pt === pt)));
+  }
+  document.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => { mode = b.dataset.mode; renderChart(); }));
+  document.querySelectorAll('[data-pt]').forEach(b => b.addEventListener('click', () => { pt = b.dataset.pt; renderChart(); }));
+  new ResizeObserver(() => renderChart()).observe(box);
+
+  /* ---------- Start ---------- */
+  const saved = store.get('sciflux-lang');
+  show(fromHash(), false);
+  setLang(saved || ((navigator.language || '').toLowerCase().startsWith('ja') ? 'ja' : 'en'), false);
+  tick(); startV(); labelPause(); if (current === 'technology') { fWarm(); fStart(); }
+})();
+</script>
 </body>
 </html>
