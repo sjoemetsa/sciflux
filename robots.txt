@@ -1,6 +1,4 @@
 # Search engines may index the site. AI training and answer crawlers may not.
-# Founder names on the About tab are also marked data-nosnippet, which keeps
-# them out of Google snippets, AI Overviews and AI Mode.
 
 User-agent: GPTBot
 User-agent: OAI-SearchBot
